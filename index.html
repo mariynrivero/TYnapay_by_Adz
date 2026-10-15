@@ -1,0 +1,1751 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="description" content="Tynapay By Adz — breads, pastries, coffee, and beverages made with so much love." />
+
+  <title>Tynapay By Adz | Made With So Much Love</title>
+
+  <style>
+
+    :root {
+
+      --purple-50: #fbf8ff;
+
+      --purple-100: #f1e8ff;
+
+      --purple-200: #e4d2ff;
+
+      --purple-300: #c9a9f2;
+
+      --purple-500: #9270c7;
+
+      --purple-700: #60458e;
+
+      --purple-900: #35264e;
+
+      --ink: #342b3d;
+
+      --muted: #71677c;
+
+      --white: #fff;
+
+      --shadow: 0 14px 35px rgba(74, 48, 105, .10);
+
+      --radius: 22px;
+
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+
+    body {
+
+      margin: 0;
+
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
+
+      color: var(--ink);
+
+      background: var(--purple-50);
+
+      line-height: 1.6;
+
+    }
+
+    a { color: inherit; }
+
+    button, input, select, textarea { font: inherit; }
+
+    .site-header {
+
+      position: sticky; top: 0; z-index: 20;
+
+      background: rgba(251, 248, 255, .94);
+
+      backdrop-filter: blur(14px);
+
+      border-bottom: 1px solid rgba(146, 112, 199, .18);
+
+    }
+
+    .nav-wrap {
+
+      max-width: 1180px; margin: auto; padding: 13px 22px;
+
+      display: flex; align-items: center; justify-content: space-between; gap: 20px;
+
+    }
+
+    .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; min-width: 180px; }
+
+    .brand-mark {
+
+      width: 43px; height: 43px; border-radius: 15px;
+
+      display: grid; place-items: center; color: white; font-weight: 900;
+
+      background: linear-gradient(135deg, var(--purple-500), var(--purple-700));
+
+      box-shadow: 0 6px 16px rgba(96,69,142,.25);
+
+    }
+
+    .brand-name { font-size: .98rem; line-height: 1.15; font-weight: 850; letter-spacing: .02em; }
+
+    .brand-tag { display: block; color: var(--muted); font-size: .68rem; font-weight: 500; margin-top: 4px; }
+
+    nav { display: flex; align-items: center; flex-wrap: wrap; gap: 5px; justify-content: flex-end; }
+
+    nav a {
+
+      text-decoration: none; padding: 9px 11px; border-radius: 999px;
+
+      font-size: .88rem; font-weight: 650; color: #5d526a; transition: .2s;
+
+    }
+
+    nav a:hover, nav a:focus { background: var(--purple-100); color: var(--purple-700); outline: none; }
+
+    nav .nav-cta { background: var(--purple-700); color: white; }
+
+    nav .nav-cta:hover { background: var(--purple-900); color: white; }
+
+    .menu-toggle { display: none; border: 0; border-radius: 12px; padding: 9px 12px; background: var(--purple-100); color: var(--purple-900); cursor: pointer; }
+
+    .hero {
+
+      overflow: hidden; position: relative;
+
+      background: radial-gradient(circle at 85% 15%, #e3d0ff 0, transparent 32%),
+
+                  linear-gradient(135deg, #f5edff 0%, #eee2ff 55%, #fdfaff 100%);
+
+    }
+
+    .hero-inner {
+
+      max-width: 1180px; margin: auto; padding: 82px 22px 88px;
+
+      display: grid; grid-template-columns: 1.12fr .88fr; align-items: center; gap: 50px;
+
+    }
+
+    .eyebrow {
+
+      display: inline-flex; align-items: center; gap: 8px; border: 1px solid #d9c4f5;
+
+      border-radius: 999px; padding: 7px 12px; color: var(--purple-700);
+
+      font-size: .78rem; text-transform: uppercase; letter-spacing: .11em; font-weight: 800;
+
+      background: rgba(255,255,255,.6);
+
+    }
+
+    h1 { font-size: clamp(2.7rem, 5.5vw, 5rem); line-height: 1.02; letter-spacing: -.055em; margin: 20px 0 18px; color: var(--purple-900); }
+
+    h1 span { color: var(--purple-500); }
+
+    .hero-copy { max-width: 590px; font-size: 1.12rem; color: #62566f; }
+
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+
+    .btn {
+
+      display: inline-flex; justify-content: center; align-items: center; gap: 8px;
+
+      padding: 12px 19px; border-radius: 999px; border: 1px solid transparent;
+
+      font-weight: 750; text-decoration: none; cursor: pointer; transition: transform .2s, box-shadow .2s;
+
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn-primary { background: var(--purple-700); color: white; box-shadow: 0 9px 20px rgba(96,69,142,.2); }
+
+    .btn-secondary { background: rgba(255,255,255,.72); color: var(--purple-700); border-color: #d9c4f5; }
+
+    .hero-art { position: relative; min-height: 350px; display: grid; place-items: center; }
+
+    .hero-circle {
+
+      width: min(100%, 410px); aspect-ratio: 1; border-radius: 50%;
+
+      background: linear-gradient(145deg, #d5baf7, #f4eaff);
+
+      display: grid; place-items: center; position: relative; box-shadow: inset 0 0 0 1px #fff8, var(--shadow);
+
+    }
+
+    .hero-circle::before, .hero-circle::after { content: ""; position: absolute; border: 1px solid rgba(96,69,142,.18); border-radius: 50%; inset: 22px; }
+
+    .hero-circle::after { inset: 45px; }
+
+    .bread-illustration { font-size: clamp(7rem, 15vw, 11rem); filter: drop-shadow(0 16px 12px rgba(72,47,98,.17)); z-index: 1; }
+
+    .floating-note {
+
+      position: absolute; z-index: 2; background: white; border: 1px solid #eee4ff;
+
+      border-radius: 18px; padding: 13px 17px; box-shadow: var(--shadow); font-size: .88rem;
+
+    }
+
+    .floating-note strong { display: block; color: var(--purple-700); }
+
+    .note-one { top: 12%; left: -2%; transform: rotate(-5deg); }
+
+    .note-two { right: -2%; bottom: 12%; transform: rotate(4deg); }
+
+    .section { max-width: 1180px; margin: auto; padding: 76px 22px; }
+
+    .section-head { max-width: 700px; margin: 0 auto 36px; text-align: center; }
+
+    .kicker { color: var(--purple-700); text-transform: uppercase; letter-spacing: .14em; font-size: .75rem; font-weight: 850; }
+
+    h2 { color: var(--purple-900); font-size: clamp(2rem, 4vw, 3rem); line-height: 1.12; letter-spacing: -.035em; margin: 9px 0 12px; }
+
+    .section-head p { margin: 0; color: var(--muted); }
+
+    .about-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 28px; align-items: stretch; }
+
+    .about-card, .story-card, .info-card, .form-card {
+
+      background: white; border: 1px solid #eee5fb; border-radius: var(--radius); box-shadow: var(--shadow);
+
+    }
+
+    .about-card { padding: 30px; background: linear-gradient(145deg, #e8d8ff, #faf6ff); display: flex; flex-direction: column; justify-content: center; }
+
+    .about-card .big-quote { font-size: 1.7rem; line-height: 1.3; font-weight: 800; color: var(--purple-900); margin: 0 0 15px; }
+
+    .about-card p, .story-card p { color: var(--muted); }
+
+    .story-card { padding: 30px; }
+
+    .story-card h3 { color: var(--purple-700); margin-top: 0; }
+
+    .pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+
+    .pill { padding: 7px 11px; border-radius: 999px; background: var(--purple-100); color: var(--purple-700); font-size: .82rem; font-weight: 700; }
+
+    .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 22px; }
+
+    .value-card { background: #fff; border: 1px solid #eee5fb; border-radius: 18px; padding: 21px; }
+
+    .value-card .icon { font-size: 1.65rem; }
+
+    .value-card h3 { margin: 8px 0 5px; color: var(--purple-900); }
+
+    .value-card p { margin: 0; color: var(--muted); font-size: .94rem; }
+
+    .menu-section { max-width: none; background: #f3ebff; }
+
+    .menu-inner { max-width: 1180px; margin: auto; padding: 76px 22px; }
+
+    .menu-tabs { display: flex; justify-content: center; flex-wrap: wrap; gap: 9px; margin: 25px 0 32px; }
+
+    .tab {
+
+      border: 1px solid #d8c5f4; background: rgba(255,255,255,.72); color: var(--purple-700);
+
+      padding: 10px 16px; border-radius: 999px; font-weight: 750; cursor: pointer;
+
+    }
+
+    .tab.active, .tab:hover { background: var(--purple-700); border-color: var(--purple-700); color: white; }
+
+    .menu-panel { display: none; }
+
+    .menu-panel.active { display: block; animation: fadeIn .25s ease; }
+
+    @keyframes fadeIn { from { opacity: .3; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+
+    .menu-category-title { color: var(--purple-900); font-size: 1.35rem; margin: 0 0 14px; }
+
+    .menu-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+
+    .menu-item {
+
+      min-width: 0; overflow: hidden; background: white; border: 1px solid #e9def8;
+
+      border-radius: 18px; padding: 0; display: flex; flex-direction: column;
+
+      align-items: stretch; gap: 0; box-shadow: 0 8px 22px rgba(74, 48, 105, .07);
+
+    }
+
+    .menu-photo { position: relative; width: 100%; aspect-ratio: 4 / 3; overflow: hidden; background: linear-gradient(135deg, #f1e8ff, #fbf8ff); }
+
+    .menu-photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+    .menu-photo-placeholder { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 7px; padding: 12px; color: var(--purple-700); text-align: center; font-size: .82rem; }
+
+    .menu-photo-placeholder .photo-icon { font-size: 2rem; }
+
+    .menu-photo.has-image .menu-photo-placeholder { display: none; }
+
+    .menu-item-info { padding: 15px 16px 17px; display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; flex: 1; }
+
+    .menu-item h4 { margin: 0; font-size: 1rem; color: var(--ink); }
+
+    .menu-item p { margin: 3px 0 0; font-size: .82rem; color: var(--muted); }
+
+    .price { color: var(--purple-700); font-weight: 850; white-space: nowrap; text-align: right; }
+
+    .price small { display: block; color: var(--muted); font-size: .72rem; font-weight: 600; }
+
+    .menu-note { text-align: center; font-size: .85rem; color: var(--muted); margin-top: 18px; }
+
+    .location-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+
+    .info-card { padding: 24px; }
+
+    .info-card h3 { color: var(--purple-700); margin: 0 0 7px; }
+
+    .info-card p { color: var(--muted); margin: 0; }
+
+    .info-card .info-icon { font-size: 1.7rem; margin-bottom: 8px; }
+
+    .location-callout { margin-top: 20px; background: var(--purple-100); border: 1px solid #dfcdf7; border-radius: 18px; padding: 20px 24px; }
+
+    .location-callout strong { color: var(--purple-900); }
+
+    .news-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
+
+    .news-link { display: flex; flex-direction: column; gap: 8px; padding: 22px; background: white; border: 1px solid #eee5fb; border-radius: 18px; text-decoration: none; box-shadow: var(--shadow); transition: transform .2s; }
+
+    .news-link:hover { transform: translateY(-3px); }
+
+    .news-link .news-date { color: var(--purple-700); font-size: .75rem; font-weight: 850; text-transform: uppercase; letter-spacing: .08em; }
+
+    .news-link strong { color: var(--purple-900); font-size: 1.05rem; }
+
+    .news-link span:last-child { color: var(--muted); font-size: .9rem; }
+
+    .franchise-section { background: linear-gradient(135deg, #e9dcff, #f9f5ff); }
+
+    .franchise-wrap { max-width: 1180px; margin: auto; padding: 76px 22px; display: grid; grid-template-columns: .9fr 1.1fr; gap: 35px; align-items: center; }
+
+    .franchise-copy p { color: #655a72; }
+
+    .feature-list { list-style: none; padding: 0; margin: 22px 0; display: grid; gap: 10px; }
+
+    .feature-list li::before { content: "✓"; color: var(--purple-700); font-weight: 900; margin-right: 10px; }
+
+    .form-card { padding: 26px; }
+
+    .form-card h3 { margin: 0 0 18px; color: var(--purple-900); }
+
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+    .field { display: flex; flex-direction: column; gap: 6px; }
+
+    .field.full { grid-column: 1 / -1; }
+
+    label { font-size: .85rem; font-weight: 750; color: #5b4d6b; }
+
+    input, select, textarea { width: 100%; padding: 12px 13px; border-radius: 12px; border: 1px solid #ded1ee; background: #fdfbff; color: var(--ink); outline: none; }
+
+    input:focus, select:focus, textarea:focus { border-color: var(--purple-500); box-shadow: 0 0 0 3px #e7d9ff; }
+
+    textarea { min-height: 105px; resize: vertical; }
+
+    .privacy { color: var(--muted); font-size: .78rem; margin: 12px 0 16px; }
+
+    .form-message { display: none; background: #f0e8ff; color: var(--purple-900); border-radius: 12px; padding: 12px; margin-top: 14px; font-size: .9rem; }
+
+    .feedback-bg { background: #fbf8ff; }
+
+    .feedback-layout { display: grid; grid-template-columns: .75fr 1.25fr; gap: 25px; align-items: start; }
+
+    .feedback-intro { background: var(--purple-100); border-radius: var(--radius); padding: 26px; }
+
+    .feedback-intro p { color: var(--muted); }
+
+    .stars { display: flex; gap: 7px; }
+
+    .star { border: 0; background: #f1e8ff; color: #a18cbf; font-size: 1.65rem; cursor: pointer; padding: 2px 5px; border-radius: 8px; }
+
+    .star.selected, .star:hover { color: #7a55b3; background: #e1d0ff; }
+
+    footer { background: var(--purple-900); color: #f5edff; padding: 38px 22px; }
+
+    .footer-inner { max-width: 1180px; margin: auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 25px; }
+
+    footer p { margin: 6px 0; color: #d9cbe9; font-size: .9rem; }
+
+    .socials { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 12px; }
+
+    .socials a { color: #f5edff; text-decoration: none; border: 1px solid #76618f; padding: 7px 11px; border-radius: 999px; font-size: .85rem; }
+
+    .socials a:hover { background: #594371; }
+
+    .copyright { max-width: 1180px; margin: 25px auto 0; border-top: 1px solid #5a466e; padding-top: 18px; color: #c7b6db; font-size: .8rem; }
+
+    @media (max-width: 900px) {
+
+      .nav-wrap { flex-wrap: wrap; }
+
+      .menu-toggle { display: block; }
+
+      nav { display: none; width: 100%; justify-content: flex-start; padding-top: 8px; }
+
+      nav.open { display: flex; }
+
+      .hero-inner, .about-grid, .franchise-wrap, .feedback-layout { grid-template-columns: 1fr; }
+
+      .hero-inner { padding-top: 60px; gap: 20px; }
+
+      .hero-art { min-height: 300px; }
+
+      .hero-circle { width: min(80%, 350px); }
+
+      .note-one { left: 5%; } .note-two { right: 5%; }
+
+    }
+
+    @media (min-width: 621px) and (max-width: 950px) {
+
+      .menu-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+    }
+
+    @media (max-width: 620px) {
+
+      .section, .menu-inner, .franchise-wrap { padding: 55px 16px; }
+
+      .hero-inner { padding: 52px 16px 60px; }
+
+      .menu-grid, .location-grid, .news-list, .values-grid, .form-grid { grid-template-columns: 1fr; }
+
+      .field.full { grid-column: auto; }
+
+      .menu-item { padding: 14px; }
+
+      .brand { min-width: 0; }
+
+      .brand-name { font-size: .88rem; }
+
+      .hero-copy { font-size: 1rem; }
+
+      .hero-art { min-height: 255px; }
+
+      .floating-note { font-size: .78rem; padding: 10px 12px; }
+
+      nav a { font-size: .82rem; }
+
+    }
+
+
+
+    /* Homepage brand styling */
+
+    .hero-title-script {
+
+      font-family: "Brush Script MT", "Segoe Script", "Lucida Handwriting", cursive;
+
+      font-style: italic;
+
+      font-weight: 600;
+
+      letter-spacing: -.02em;
+
+      text-transform: none;
+
+    }
+
+    .hero-photo-wrap {
+
+      width: min(100%, 430px);
+
+      aspect-ratio: 4 / 5;
+
+      max-height: 430px;
+
+      overflow: hidden;
+
+      border-radius: 32px;
+
+      border: 8px solid rgba(255,255,255,.75);
+
+      box-shadow: var(--shadow);
+
+      background: linear-gradient(145deg, #e4d2ff, #fbf8ff);
+
+      justify-self: center;
+
+    }
+
+    .hero-photo {
+
+      display: block;
+
+      width: 100%;
+
+      height: 100%;
+
+      min-height: 280px;
+
+      object-fit: cover;
+
+    }
+
+    .section-footer {
+
+      background: var(--purple-900);
+
+      color: #f5edff;
+
+      padding: 32px 20px 20px;
+
+      text-align: center;
+
+    }
+
+    .section-footer-inner {
+
+      max-width: 1180px;
+
+      margin: auto;
+
+      display: flex;
+
+      flex-direction: column;
+
+      align-items: center;
+
+      gap: 12px;
+
+    }
+
+    .footer-brand { font-size: 1.2rem; font-weight: 850; letter-spacing: .04em; color: #fff; }
+
+    .footer-bio { max-width: 520px; margin: 0; color: #d9cbe9; font-size: .9rem; line-height: 1.7; }
+
+    .footer-socials { display: flex; justify-content: center; align-items: center; gap: 16px; margin: 8px 0; }
+
+    .footer-socials a { display: flex; align-items: center; justify-content: center; width: 42px; height: 42px; border: 1px solid #76618f; border-radius: 50%; color: #fff; text-decoration: none; transition: .2s ease; }
+
+    .footer-socials a:hover { background: #60458e; transform: translateY(-3px); }
+
+    .footer-socials svg { width: 21px; height: 21px; fill: currentColor; }
+
+    .footer-socials .instagram-icon { fill: none; stroke: currentColor; stroke-width: 2; }
+
+    .footer-copyright { width: 100%; max-width: 1180px; margin-top: 8px; padding-top: 16px; border-top: 1px solid #5a466e; color: #c7b6db; font-size: .8rem; }
+
+
+
+.location-card-image {
+
+    width: 100%;
+
+    height: 200px;
+
+    object-fit: cover;
+
+    display: block;
+
+    border-radius: 12px;
+
+    margin-bottom: 15px;
+
+}
+
+
+
+.location-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 20px;
+
+}
+
+
+
+.info-card {
+
+    overflow: hidden;
+
+}
+
+
+
+@media (max-width: 600px) {
+
+    .location-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+
+    .location-card-image {
+
+        height: 220px;
+
+    }
+
+}
+
+
+
+  
+
+    /* Google Forms QR cards: added while preserving the original website styling */
+    .qr-card { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 14px; }
+    .qr-card p { margin: 0; }
+    .qr-link { display: inline-flex; justify-content: center; align-items: center; max-width: 100%; }
+    .form-qr { display: block; width: min(260px, 100%); height: auto; border-radius: 12px; background: #fff; padding: 8px; }
+    .qr-card .btn { margin-top: 4px; }
+
+</style>
+
+</head>
+
+<body>
+
+  <header class="site-header">
+
+    <div class="nav-wrap">
+
+      <a class="brand" href="#home" aria-label="Tynapay By Adz home">
+
+        <span class="brand-mark">TY</span>
+
+        <span class="brand-name">TYNAPAY BY ADZ<span class="brand-tag">Made with so much love</span></span>
+
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainNav">☰ Menu</button>
+
+      <nav id="mainNav" aria-label="Main navigation">
+
+        <a href="#home">Home</a>
+
+        <a href="#about">About</a>
+
+        <a href="#menu">Menu</a>
+
+        <a href="#location">Location</a>
+
+        <a href="#news">News</a>
+
+        <a href="#franchise">Franchise Now</a>
+
+        <a href="#feedback">Feedback</a>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+
+  <main>
+
+    <section class="hero" id="home">
+
+      <div class="hero-inner">
+
+        <div>
+
+          <span class="eyebrow">♡ Family's favorite online bakeshop</span>
+
+          <h1>TYNAPAY<br><span class="hero-title-script">By Adz</span></h1>
+
+          <p class="hero-copy">Family's favorite online bakeshop offering one of the best and ULTRA-SOFT Cheese Rolls in town.</p>
+
+          <div class="hero-actions">
+
+            <a class="btn btn-primary" href="#menu">Explore Our Menu <span aria-hidden="true">→</span></a>
+
+            <a class="btn btn-secondary" href="#location">Find Our Location</a>
+
+          </div>
+
+        </div>
+
+        <div class="hero-art" aria-label="Tynapay By Adz homepage photo">
+
+          <!-- Upload your chosen homepage photo into the same folder as this HTML file,
+
+               then name it homepage-photo.jpg. This is the only homepage image slot. -->
+
+          <div class="hero-photo-wrap">
+
+            <img class="hero-photo" src="https://uploads.onecompiler.io/454c9wpbj/45655rgq2/tynapay.jpg" alt="Tynapay By Adz breads and pastries" />
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+
+
+    <div class="section-footer" aria-label="Tynapay By Adz social media footer">
+
+      <div class="section-footer-inner">
+
+        <div class="footer-brand">TYNAPAY BY ADZ</div>
+
+        <p class="footer-bio">Family's favorite online bakeshop offering ultra-soft cheese rolls, freshly baked pastries, and drinks made with so much love.</p>
+
+        <div class="footer-socials">
+
+          <a href="https://www.facebook.com/TYnapaybyAdz" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5h1.7V3.9c-.3 0-1.4-.1-2.6-.1-2.6 0-4.3 1.6-4.3 4.5V10H7v3h2.9v8h3.6z"/></svg>
+
+          </a>
+
+          <a href="https://www.tiktok.com/@tynapaybyadz?_r=1&_t=ZS-9AQkoAnz0du" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.6 7.1a6.4 6.4 0 0 1-3.9-1.3v8.1a6.1 6.1 0 1 1-5.3-6.1v3.4a2.8 2.8 0 1 0 2 2.7V2.5h3.3c.2 2.1 1.7 3.8 3.9 4.1v.5z"/></svg>
+
+          </a>
+
+          <a href="https://www.instagram.com/tynapay_by_adz?srtk=MTJvYXhvajVkaGVleQ%3D%3D" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+
+            <svg class="instagram-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+
+          </a>
+
+        </div>
+
+        <div class="footer-copyright">© 2026 Tynapay By Adz. All rights reserved.</div>
+
+      </div>
+
+    </div>
+
+    <section class="section" id="about">
+
+      <div class="section-head">
+
+        <span class="kicker">Get to know us</span>
+
+        <h2>A little story, baked with love</h2>
+
+        <p>From a home kitchen during the pandemic to pastries and mobile coffee carts for special occasions.</p>
+
+      </div>
+
+      <div class="about-grid">
+
+        <article class="about-card">
+
+          <p class="big-quote">“Breads and coffee made with so much love.”</p>
+
+          <p>Tynapay By Adz is built on faith, gratitude, resilience, and community support.</p>
+
+          <div class="pill-row"><span class="pill">Faith</span><span class="pill">Family</span><span class="pill">Gratitude</span><span class="pill">Community</span></div>
+
+        </article>
+
+        <article class="story-card">
+
+          <h3>History &amp; Establishment</h3>
+
+          <p><strong>April 2020:</strong> Adrienne Ty (“Adz”) and Eric Ty established the business during the COVID-19 lockdowns. Baking began as a therapeutic outlet and an alternative source of income from their home kitchen along the borders of Cainta and Pasig.</p>
+
+          <p>The name is a wordplay on <em>tinapay</em>, while “Ty” honors the family surname and “T.Y.” expresses gratitude to God and their supporting community.</p>
+
+          <p>The business began with an order of one dozen Ube Cheese Pandesals. Its menu grew to include Classic Cheese Rolls, Cinnamon Rolls with Cream Cheese Glaze, and Coffee Buns. From 2024 onward, the TYnapay + Kape Mobile Event Cart expanded its service to corporate events, brand activations, and weddings.</p>
+
+          <p><strong>Founders:</strong> Adrienne Ty (“Adz”) and Eric Ty.</p>
+
+        </article>
+
+      </div>
+
+      <div class="values-grid">
+
+        <article class="value-card"><div class="icon">♡</div><h3>Our Mission</h3><p>To share love with every home and celebration through high-quality breads, pastries, and mobile espresso carts that unite people and spark joy.</p></article>
+
+        <article class="value-card"><div class="icon">✦</div><h3>Our Vision</h3><p>To become part of Filipino family traditions and milestones and grow into a trusted specialty event-catering partner.</p></article>
+
+        <article class="value-card"><div class="icon">☕</div><h3>Our Philosophy</h3><p>Breads and coffee “Made with so much love,” grounded in faith and gratitude.</p></article>
+
+      </div>
+
+    </section>
+
+
+
+
+
+    <div class="section-footer" aria-label="Tynapay By Adz social media footer">
+
+      <div class="section-footer-inner">
+
+        <div class="footer-brand">TYNAPAY BY ADZ</div>
+
+        <p class="footer-bio">Family's favorite online bakeshop offering ultra-soft cheese rolls, freshly baked pastries, and drinks made with so much love.</p>
+
+        <div class="footer-socials">
+
+          <a href="https://www.facebook.com/TYnapaybyAdz" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5h1.7V3.9c-.3 0-1.4-.1-2.6-.1-2.6 0-4.3 1.6-4.3 4.5V10H7v3h2.9v8h3.6z"/></svg>
+
+          </a>
+
+          <a href="https://www.tiktok.com/@tynapaybyadz?_r=1&_t=ZS-9AQkoAnz0du" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.6 7.1a6.4 6.4 0 0 1-3.9-1.3v8.1a6.1 6.1 0 1 1-5.3-6.1v3.4a2.8 2.8 0 1 0 2 2.7V2.5h3.3c.2 2.1 1.7 3.8 3.9 4.1v.5z"/></svg>
+
+          </a>
+
+          <a href="https://www.instagram.com/tynapay_by_adz?srtk=MTJvYXhvajVkaGVleQ%3D%3D" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+
+            <svg class="instagram-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+
+          </a>
+
+        </div>
+
+        <div class="footer-copyright">© 2026 Tynapay By Adz. All rights reserved.</div>
+
+      </div>
+
+    </div>
+
+    <section class="menu-section" id="menu">
+
+      <div class="menu-inner">
+
+        <div class="section-head">
+
+          <span class="kicker">Something for every craving</span>
+
+          <h2>Our Menu</h2>
+
+          <p>Signature rolls, sweet treats, savory bakes, and drinks to make your day a little brighter.</p>
+
+        </div>
+
+        <p class="menu-note menu-image-help">To add your actual product photos, save each image inside an <strong>images</strong> folder beside this HTML file. Use the exact filenames shown in each photo placeholder.</p>
+
+        <div class="menu-tabs" role="tablist" aria-label="Menu categories">
+
+          <button class="tab active" role="tab" aria-selected="true" data-panel="signature">Top Signature</button>
+
+          <button class="tab" role="tab" aria-selected="false" data-panel="sweet">Sweet Glazed</button>
+
+          <button class="tab" role="tab" aria-selected="false" data-panel="savory">Savory Selection</button>
+
+          <button class="tab" role="tab" aria-selected="false" data-panel="coffee">Coffee</button>
+
+          <button class="tab" role="tab" aria-selected="false" data-panel="noncoffee">Non-Coffee</button>
+
+          <button class="tab" role="tab" aria-selected="false" data-panel="milktea">Milk Tea</button>
+
+          <button class="tab" role="tab" aria-selected="false" data-panel="fruittea">Fruit Tea</button>
+
+        </div>
+
+
+
+        <div class="menu-panel active" id="panel-signature" role="tabpanel">
+
+          <h3 class="menu-category-title">Top Signature</h3>
+
+          <div class="menu-grid">
+
+            <article class="menu-item">
+
+              <div class="menu-photo">
+
+                <img src="https://uploads.onecompiler.io/454c9wpbj/1791956844793/classic%20cheese.png" alt="Classic Cheese Roll" loading="lazy" onload="this.parentElement.classList.add('has-image')" onerror="this.style.display='none'" />
+
+                <div class="menu-photo-placeholder"><span class="photo-icon">📷</span><span>Add your photo<br><strong>menu-01-classic-cheese-roll.jpg</strong></span></div>
+
+              </div>
+
+              <div class="menu-item-info"><div><h4>Classic Cheese Roll</h4><p>Box of 8</p></div><div class="price">₱300</div></div>
+
+            </article>
+
+            <article class="menu-item">
+
+              <div class="menu-photo">
+
+                <img src="https://uploads.onecompiler.io/454c9wpbj/1791956875133/ube%20cheese.png" alt="Ube Cheese Roll" loading="lazy" onload="this.parentElement.classList.add('has-image')" onerror="this.style.display='none'" />
+
+                <div class="menu-photo-placeholder"><span class="photo-icon">📷</span><span>Add your photo<br><strong>menu-02-ube-cheese-roll.jpg</strong></span></div>
+
+              </div>
+
+              <div class="menu-item-info"><div><h4>Ube Cheese Roll</h4><p>Box of 8</p></div><div class="price">₱300</div></div>
+
+            </article>
+
+            <article class="menu-item">
+
+              <div class="menu-photo">
+
+                <img src="https://uploads.onecompiler.io/454c9wpbj/1791957092128/mixed%20rolls.jpg" alt="Mixed Cheese Roll" loading="lazy" onload="this.parentElement.classList.add('has-image')" onerror="this.style.display='none'" />
+
+                <div class="menu-photo-placeholder"><span class="photo-icon">📷</span><span>Add your photo<br><strong>menu-03-mixed-cheese-roll.jpg</strong></span></div>
+
+              </div>
+
+              <div class="menu-item-info"><div><h4>Mixed Cheese Roll</h4><p>Box of 8 · 4 Classic + 4 Ube</p></div><div class="price">₱525</div></div>
+
+            </article>
+
+            <article class="menu-item">
+
+              <div class="menu-photo">
+
+                <img src="https://uploads.onecompiler.io/454c9wpbj/1791956883470/ube%20pandesal.png" alt="Ube Cheese Pandesal" loading="lazy" onload="this.parentElement.classList.add('has-image')" onerror="this.style.display='none'" />
+
+                <div class="menu-photo-placeholder"><span class="photo-icon">📷</span><span>Add your photo<br><strong>menu-04-ube-cheese-pandesal.jpg</strong></span></div>
+
+              </div>
+
+              <div class="menu-item-info"><div><h4>Ube Cheese Pandesal</h4><p>Per batch package</p></div><div class="price">Inquire for price</div></div>
+
+            </article>
+
+          </div>
+
+        </div>
+
+        <div class="menu-panel" id="panel-sweet" role="tabpanel">
+
+          <h3 class="menu-category-title">Sweet Glazed</h3>
+
+          <div class="menu-grid">
+
+            <article class="menu-item">
+
+              <div class="menu-photo">
+
+                <img src="https://uploads.onecompiler.io/454c9wpbj/1791956889472/classic%20cinnamon.png" alt="Classic Cinnamon Rolls" loading="lazy" onload="this.parentElement.classList.add('has-image')" onerror="this.style.display='none'" />
+
+                <div class="menu-photo-placeholder"><span class="photo-icon">📷</span><span>Add your photo<br><strong>menu-05-classic-cinnamon-rolls.jpg</strong></span></div>
+
+              </div>
+
+              <div class="menu-item-info"><div><h4>Classic Cinnamon Rolls</h4><p>Box of 4</p></div><div class="price">₱300</div></div>
+
+            </article>
+
+            <article class="menu-item">
+
+              <div class="menu-photo">
+
+                <img src="https://uploads.onecompiler.io/454c9wpbj/1791956889472/classic%20cinnamon.png" alt="Classic Cinnamon Rolls" loading="lazy" onload="this.parentElement.classList.add('has-image')" onerror="this.style.display='none'" />
+
+                <div class="menu-photo-placeholder"><span class="photo-icon">📷</span><span>Add your photo<br><strong>menu-06-classic-cinnamon-rolls.jpg</strong></span></div>
+
+              </div>
+
+              <div class="menu-item-info"><div><h4>Classic Cinnamon Rolls</h4><p>Box of 6</p></div><div class="price">₱440</div></div>
+
+            </article>
+
+            <article class="menu-item">
+
+              <div class="menu-photo">
+
+                <img src="https://uploads.onecompiler.io/454c9wpbj/1791956889472/classic%20cinnamon.png" alt="Classic Cinnamon Rolls" loading="lazy" onload="this.parentElement.classList.add('has-image')" onerror="this.style.display='none'" />
+
+                <div class="menu-photo-placeholder"><span class="photo-icon">📷</span><span>Add your photo<br><strong>menu-07-classic-cinnamon-rolls.jpg</strong></span></div>
+
+              </div>
+
+              <div class="menu-item-info"><div><h4>Classic Cinnamon Rolls</h4><p>Box of 9</p></div><div class="price">₱650</div></div>
+
+            </article>
+
+          </div>
+
+        </div>
+
+        <div class="menu-panel" id="panel-savory" role="tabpanel">
+
+          <h3 class="menu-category-title">Savory Selection</h3>
+
+          <div class="menu-grid">
+
+            <article class="menu-item">
+
+              <div class="menu-photo">
+
+                <img src="https://uploads.onecompiler.io/454c9wpbj/1791956895015/artisan%20loaf.png" alt="Artisan Sourdough Focaccia" loading="lazy" onload="this.parentElement.classList.add('has-image')" onerror="this.style.display='none'" />
+
+                <div class="menu-photo-placeholder"><span class="photo-icon">📷</span><span>Add your photo<br><strong>menu-08-artisan-sourdough-focaccia.jpg</strong></span></div>
+
+              </div>
+
+              <div class="menu-item-info"><div><h4>Artisan Sourdough Focaccia</h4><p>Per loaf</p></div><div class="price">₱200</div></div>
+
+            </article>
+
+          </div>
+
+        </div>
+
+        <div class="menu-panel" id="panel-coffee" role="tabpanel">
+
+          <h3 class="menu-category-title">Coffee — Iced &amp; Hot</h3>
+
+          <div class="menu-grid">
+
+            <article class="menu-item">
+
+              <div class="menu-photo">
+
+                <img src="https://uploads.onecompiler.io/454c9wpbj/1791956903481/ice%20americano.png" alt="Americano" loading="lazy" onload="this.parentElement.classList.add('has-image')" onerror="this.style.display='none'" />
+
+                <div class="menu-photo-placeholder"><span class="photo-icon">📷</span><span>Add your photo<br><strong>menu-09-americano.jpg</strong></span></div>
+
+              </div>
+
+              <div class="menu-item-info"><div><h4>Americano</h4><p>Iced · 16 oz / 22 oz</p></div><div class="price">₱59 / ₱69<small>Hot: ₱49 / ₱59*</small></div></div>
+
+            </article>
+
+            <article class="menu-item">
+
+              <div class="menu-photo">
+
+                <img src="https://uploads.onecompiler.io/454c9wpbj/1791956916391/cappucino.png" alt="Café Latte" loading="lazy" onload="this.parentElement.classList.add('has-image')" onerror="this.style.display='none'" />
+
+                <div class="menu-photo-placeholder"><span class="photo-icon">📷</span><span>Add your photo<br><strong>menu-10-caf-latte.jpg</strong></span></div>
+
+              </div>
+
+              <div class="menu-item-info"><div><h4>Café Latte</h4><p>Iced · 16 oz / 22 oz</p></div><div class="price">₱79 / ₱89<small>Hot: ₱69 / ₱79*</small></div></div>
+
+            </article>
+
+            <article class="menu-item">
+
+              <div class="menu-photo">
+
+                <img src="https://uploads.onecompiler.io/454c9wpbj/1791956910777/cafe%20latte.png" alt="Cappuccino" loading="lazy" onload="this.parentElement.classList.add('has-image')" onerror="this.style.display='none'" />
+
+                <div class="menu-photo-placeholder"><span class="photo-icon">📷</span><span>Add your photo<br><strong>menu-11-cappuccino.jpg</strong></span></div>
+
+              </div>
+
+              <div class="menu-item-info"><div><h4>Cappuccino</h4><p>Iced · 16 oz / 22 oz</p></div><div class="price">₱79 / ₱89<small>Hot: ₱69 / ₱79*</small></div></div>
+
+            </article>
+
+            <article class="menu-item">
+
+              <div class="menu-photo">
+
+                <img src="https://uploads.onecompiler.io/454c9wpbj/1791956923224/spanish%20latte.png" alt="Spanish Latte" loading="lazy" onload="this.parentElement.classList.add('has-image')" onerror="this.style.display='none'" />
+
+                <div class="menu-photo-placeholder"><span class="photo-icon">📷</span><span>Add your photo<br><strong>menu-12-spanish-latte.jpg</strong></span></div>
+
+              </div>
+
+              <div class="menu-item-info"><div><h4>Spanish Latte</h4><p>Iced · 16 oz / 22 oz</p></div><div class="price">₱89 / ₱99<small>Hot: ₱79 / ₱89*</small></div></div>
+
+            </article>
+
+          </div>
+
+        </div>
+
+        <div class="menu-panel" id="panel-noncoffee" role="tabpanel">
+
+          <h3 class="menu-category-title">Non-Coffee · Iced</h3>
+
+          <div class="menu-grid">
+
+            <article class="menu-item">
+
+              <div class="menu-photo">
+
+                <img src="https://uploads.onecompiler.io/454c9wpbj/45655rgq2/Choco%20Hazel.png" alt="Hazelnut Milk" loading="lazy" onload="this.parentElement.classList.add('has-image')" onerror="this.style.display='none'" />
+
+                <div class="menu-photo-placeholder"><span class="photo-icon">📷</span><span>Add your photo<br><strong>menu-13-hazelnut-milk.jpg</strong></span></div>
+
+              </div>
+
+              <div class="menu-item-info"><div><h4>Hazelnut Milk</h4><p>16 oz / 22 oz</p></div><div class="price">₱69 / ₱79</div></div>
+
+            </article>
+
+            <article class="menu-item">
+
+              <div class="menu-photo">
+
+                <img src="https://uploads.onecompiler.io/454c9wpbj/45655rgq2/straw%20milk.png" alt="Strawberry Milk" loading="lazy" onload="this.parentElement.classList.add('has-image')" onerror="this.style.display='none'" />
+
+                <div class="menu-photo-placeholder"><span class="photo-icon">📷</span><span>Add your photo<br><strong>menu-14-strawberry-milk.jpg</strong></span></div>
+
+              </div>
+
+              <div class="menu-item-info"><div><h4>Strawberry Milk</h4><p>16 oz / 22 oz</p></div><div class="price">₱69 / ₱79</div></div>
+
+            </article>
+
+            <article class="menu-item">
+
+              <div class="menu-photo">
+
+                <img src="https://uploads.onecompiler.io/454c9wpbj/45655rgq2/choco%20rich.png" alt="Choco-Rich" loading="lazy" onload="this.parentElement.classList.add('has-image')" onerror="this.style.display='none'" />
+
+                <div class="menu-photo-placeholder"><span class="photo-icon">📷</span><span>Add your photo<br><strong>menu-15-choco-rich.jpg</strong></span></div>
+
+              </div>
+
+              <div class="menu-item-info"><div><h4>Choco-Rich</h4><p>16 oz / 22 oz</p></div><div class="price">₱69 / ₱79</div></div>
+
+            </article>
+
+            <article class="menu-item">
+
+              <div class="menu-photo">
+
+                <img src="https://uploads.onecompiler.io/454c9wpbj/45655rgq2/matcha.png" alt="Matcha Latte" loading="lazy" onload="this.parentElement.classList.add('has-image')" onerror="this.style.display='none'" />
+
+                <div class="menu-photo-placeholder"><span class="photo-icon">📷</span><span>Add your photo<br><strong>menu-16-matcha-latte.jpg</strong></span></div>
+
+              </div>
+
+              <div class="menu-item-info"><div><h4>Matcha Latte</h4><p>16 oz / 22 oz</p></div><div class="price">₱79 / ₱89</div></div>
+
+            </article>
+
+          </div>
+
+        </div>
+
+        <div class="menu-panel" id="panel-milktea" role="tabpanel">
+
+          <h3 class="menu-category-title">Milk Tea · Iced</h3>
+
+          <div class="menu-grid">
+
+                        <article class="menu-item">
+
+              <div class="menu-photo">
+
+                <img src="https://uploads.onecompiler.io/454c9wpbj/45655rgq2/taro.png" alt="Taro Milk Tea" loading="lazy" onload="this.parentElement.classList.add('has-image')" onerror="this.style.display='none'" />
+
+                <div class="menu-photo-placeholder"><span class="photo-icon">📷</span><span>Add your photo<br><strong>menu-18-taro-milk-tea.jpg</strong></span></div>
+
+              </div>
+
+              <div class="menu-item-info"><div><h4>Taro Milk Tea</h4><p>16 oz / 22 oz</p></div><div class="price">₱69 / ₱79</div></div>
+
+            </article>
+
+            <article class="menu-item">
+
+              <div class="menu-photo">
+
+                <img src="https://uploads.onecompiler.io/454c9wpbj/45655rgq2/wintermelon.png" alt="Wintermelon Milk Tea" loading="lazy" onload="this.parentElement.classList.add('has-image')" onerror="this.style.display='none'" />
+
+                <div class="menu-photo-placeholder"><span class="photo-icon">📷</span><span>Add your photo<br><strong>menu-19-wintermelon-milk-tea.jpg</strong></span></div>
+
+              </div>
+
+              <div class="menu-item-info"><div><h4>Wintermelon Milk Tea</h4><p>16 oz / 22 oz</p></div><div class="price">₱59 / ₱69</div></div>
+
+            </article>
+
+            <article class="menu-item">
+
+              <div class="menu-photo">
+
+                <img src="https://uploads.onecompiler.io/454c9wpbj/45655rgq2/Thai.png" alt="Thai Milk Tea" loading="lazy" onload="this.parentElement.classList.add('has-image')" onerror="this.style.display='none'" />
+
+                <div class="menu-photo-placeholder"><span class="photo-icon">📷</span><span>Add your photo<br><strong>menu-20-thai-milk-tea.jpg</strong></span></div>
+
+              </div>
+
+              <div class="menu-item-info"><div><h4>Thai Milk Tea</h4><p>16 oz / 22 oz</p></div><div class="price">₱69 / ₱79</div></div>
+
+            </article>
+
+            <article class="menu-item">
+
+              <div class="menu-photo">
+
+                <img src="https://uploads.onecompiler.io/454c9wpbj/45655rgq2/okinawa.png" alt="Okinawa Milk Tea" loading="lazy" onload="this.parentElement.classList.add('has-image')" onerror="this.style.display='none'" />
+
+                <div class="menu-photo-placeholder"><span class="photo-icon">📷</span><span>Add your photo<br><strong>menu-21-okinawa-milk-tea.jpg</strong></span></div>
+
+              </div>
+
+              <div class="menu-item-info"><div><h4>Okinawa Milk Tea</h4><p>16 oz / 22 oz</p></div><div class="price">₱69 / ₱79</div></div>
+
+            </article>
+
+          </div>
+
+        </div>
+
+        <div class="menu-panel" id="panel-fruittea" role="tabpanel">
+
+          <h3 class="menu-category-title">Fruit Tea · Iced</h3>
+
+          <div class="menu-grid">
+
+                        <article class="menu-item">
+
+              <div class="menu-photo">
+
+                <img src="https://uploads.onecompiler.io/454c9wpbj/45655rgq2/watermelon.png" alt="Watermelon" loading="lazy" onload="this.parentElement.classList.add('has-image')" onerror="this.style.display='none'" />
+
+                <div class="menu-photo-placeholder"><span class="photo-icon">📷</span><span>Add your photo<br><strong>menu-23-watermelon.jpg</strong></span></div>
+
+              </div>
+
+              <div class="menu-item-info"><div><h4>Watermelon</h4><p>16 oz / 22 oz</p></div><div class="price">₱49 / ₱59</div></div>
+
+            </article>
+
+            <article class="menu-item">
+
+              <div class="menu-photo">
+
+                <img src="https://uploads.onecompiler.io/454c9wpbj/45655rgq2/lemon.png" alt="Lemon" loading="lazy" onload="this.parentElement.classList.add('has-image')" onerror="this.style.display='none'" />
+
+                <div class="menu-photo-placeholder"><span class="photo-icon">📷</span><span>Add your photo<br><strong>menu-24-lemon.jpg</strong></span></div>
+
+              </div>
+
+              <div class="menu-item-info"><div><h4>Lemon</h4><p>16 oz / 22 oz</p></div><div class="price">₱45 / ₱55</div></div>
+
+            </article>
+
+            <article class="menu-item">
+
+              <div class="menu-photo">
+
+                <img src="https://uploads.onecompiler.io/454c9wpbj/45655rgq2/lychee.png" alt="Lychee" loading="lazy" onload="this.parentElement.classList.add('has-image')" onerror="this.style.display='none'" />
+
+                <div class="menu-photo-placeholder"><span class="photo-icon">📷</span><span>Add your photo<br><strong>menu-25-lychee.jpg</strong></span></div>
+
+              </div>
+
+              <div class="menu-item-info"><div><h4>Lychee</h4><p>16 oz / 22 oz</p></div><div class="price">₱49 / ₱59</div></div>
+
+            </article>
+
+            <article class="menu-item">
+
+              <div class="menu-photo">
+
+                <img src="https://uploads.onecompiler.io/454c9wpbj/45655rgq2/green%20app.png" alt="Green Apple" loading="lazy" onload="this.parentElement.classList.add('has-image')" onerror="this.style.display='none'" />
+
+                <div class="menu-photo-placeholder"><span class="photo-icon">📷</span><span>Add your photo<br><strong>menu-26-green-apple.jpg</strong></span></div>
+
+              </div>
+
+              <div class="menu-item-info"><div><h4>Green Apple</h4><p>16 oz / 22 oz</p></div><div class="price">₱49 / ₱59</div></div>
+
+            </article>
+
+          </div>
+
+        </div>
+
+        <p class="menu-note">*Hot coffee prices shown are suggested prices from the draft menu plan; the supplied PDF lists the iced coffee prices and sizes. Please confirm hot sizes and prices before publishing.</p>
+
+      </div>
+
+    </section>
+
+
+
+
+
+    <div class="section-footer" aria-label="Tynapay By Adz social media footer">
+
+      <div class="section-footer-inner">
+
+        <div class="footer-brand">TYNAPAY BY ADZ</div>
+
+        <p class="footer-bio">Family's favorite online bakeshop offering ultra-soft cheese rolls, freshly baked pastries, and drinks made with so much love.</p>
+
+        <div class="footer-socials">
+
+          <a href="https://www.facebook.com/TYnapaybyAdz" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5h1.7V3.9c-.3 0-1.4-.1-2.6-.1-2.6 0-4.3 1.6-4.3 4.5V10H7v3h2.9v8h3.6z"/></svg>
+
+          </a>
+
+          <a href="https://www.tiktok.com/@tynapaybyadz?_r=1&_t=ZS-9AQkoAnz0du" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.6 7.1a6.4 6.4 0 0 1-3.9-1.3v8.1a6.1 6.1 0 1 1-5.3-6.1v3.4a2.8 2.8 0 1 0 2 2.7V2.5h3.3c.2 2.1 1.7 3.8 3.9 4.1v.5z"/></svg>
+
+          </a>
+
+          <a href="https://www.instagram.com/tynapay_by_adz?srtk=MTJvYXhvajVkaGVleQ%3D%3D" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+
+            <svg class="instagram-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+
+          </a>
+
+        </div>
+
+        <div class="footer-copyright">© 2026 Tynapay By Adz. All rights reserved.</div>
+
+      </div>
+
+    </div>
+
+    <section class="section" id="location">
+
+      <div class="section-head">
+
+        <span class="kicker">Come say hello</span>
+
+        <h2>Location &amp; Service Areas</h2>
+
+        <p>From our baking roots to pickup, delivery, and event catering.</p>
+
+      </div>
+
+
+
+<div class="location-grid">
+
+
+
+    <article class="info-card">
+
+        <img src="https://uploads.onecompiler.io/454c9wpbj/1791955173583/Loc%201.png"
+
+             alt="Tynapay By Adz Baking Base"
+
+             class="location-card-image">
+
+        <div class="info-icon">🏡</div>
+
+        <h3>Baking Base</h3>
+
+        <p>Boundary of Cainta, Rizal, and Pasig City.</p>
+
+    </article>
+
+
+
+    <article class="info-card">
+
+        <img src="https://uploads.onecompiler.io/454c9wpbj/1791955288408/Loc%202.png"
+
+             alt="Tynapay By Adz Pick-Up Location"
+
+             class="location-card-image">
+
+        <div class="info-icon">📍</div>
+
+        <h3>Pick-Up Address</h3>
+
+        <p>5B Century Compound Project 4, Quezon City, Philippines.</p>
+
+    </article>
+
+
+
+    <article class="info-card">
+
+        <img src="https://uploads.onecompiler.io/454c9wpbj/1791969459757/delivery.png"
+
+             alt="Tynapay By Adz Delivery Service"
+
+             class="location-card-image">
+
+        <div class="info-icon">🛵</div>
+
+        <h3>Delivery Service Scope</h3>
+
+        <p>All of Metro Manila and select nearby Rizal borders via third-party apps.</p>
+
+    </article>
+
+
+
+    <article class="info-card">
+
+        <img src="https://uploads.onecompiler.io/454c9wpbj/1791969543268/catering.jpg"
+
+             alt="Tynapay By Adz Catering Service"
+
+             class="location-card-image">
+
+        <div class="info-icon">🍱</div>
+
+        <h3>Catering Cart Coverage</h3>
+
+        <p>Mobile service across Luzon, deployed directly to your chosen event venue.</p>
+
+    </article>
+
+
+
+</div>
+
+
+
+<div class="location-callout">
+
+    <strong>Planning an order or event?</strong>
+
+    Please contact Tynapay By Adz through its official social media pages to confirm availability, delivery fees, and catering arrangements.
+
+</div>
+
+
+
+    </section>
+
+
+
+
+
+    <div class="section-footer" aria-label="Tynapay By Adz social media footer">
+
+      <div class="section-footer-inner">
+
+        <div class="footer-brand">TYNAPAY BY ADZ</div>
+
+        <p class="footer-bio">Family's favorite online bakeshop offering ultra-soft cheese rolls, freshly baked pastries, and drinks made with so much love.</p>
+
+        <div class="footer-socials">
+
+          <a href="https://www.facebook.com/TYnapaybyAdz" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5h1.7V3.9c-.3 0-1.4-.1-2.6-.1-2.6 0-4.3 1.6-4.3 4.5V10H7v3h2.9v8h3.6z"/></svg>
+
+          </a>
+
+          <a href="https://www.tiktok.com/@tynapaybyadz?_r=1&_t=ZS-9AQkoAnz0du" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.6 7.1a6.4 6.4 0 0 1-3.9-1.3v8.1a6.1 6.1 0 1 1-5.3-6.1v3.4a2.8 2.8 0 1 0 2 2.7V2.5h3.3c.2 2.1 1.7 3.8 3.9 4.1v.5z"/></svg>
+
+          </a>
+
+          <a href="https://www.instagram.com/tynapay_by_adz?srtk=MTJvYXhvajVkaGVleQ%3D%3D" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+
+            <svg class="instagram-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+
+          </a>
+
+        </div>
+
+        <div class="footer-copyright">© 2026 Tynapay By Adz. All rights reserved.</div>
+
+      </div>
+
+    </div>
+
+    <section class="section" id="news">
+
+      <div class="section-head">
+
+        <span class="kicker">In the spotlight</span>
+
+        <h2>News &amp; Features</h2>
+
+        <p>Explore the media features and appearances listed in the Tynapay By Adz information draft.</p>
+
+      </div>
+
+      <div class="news-list">
+
+        <a class="news-link" href="https://www.rappler.com/culture-desk/food-drinks/sweet-picks-pastries-october-24-30-2021/" target="_blank" rel="noopener noreferrer"><span class="news-date">Rappler · 2021</span><strong>Culture Desk — Sweet Picks</strong><span>Read the pastry feature on Rappler ↗</span></a>
+
+        <a class="news-link" href="https://www.youtube.com/watch?v=ta8JFElaht8" target="_blank" rel="noopener noreferrer"><span class="news-date">TV5 · 2024–2025</span><strong>Gud Morning Kapatid</strong><span>Watch the TV5 feature ↗</span></a>
+
+        <a class="news-link" href="https://www.facebook.com/watch/?v=1385147893564035" target="_blank" rel="noopener noreferrer"><span class="news-date">IBC TV13 · 2026</span><strong>TrezeMornings</strong><span>View the Facebook video ↗</span></a>
+
+        <a class="news-link" href="https://www.facebook.com/Magic89.9/posts/from-a-pandemic-panic-project-to-every-familys-favorite-baked-goods-homegrown-ar/1515189800644259/" target="_blank" rel="noopener noreferrer"><span class="news-date">Magic 89.9 · 2026</span><strong>Big Breakfast</strong><span>Read the Magic 89.9 post ↗</span></a>
+
+      </div>
+
+    </section>
+
+
+
+
+
+    <div class="section-footer" aria-label="Tynapay By Adz social media footer">
+
+      <div class="section-footer-inner">
+
+        <div class="footer-brand">TYNAPAY BY ADZ</div>
+
+        <p class="footer-bio">Family's favorite online bakeshop offering ultra-soft cheese rolls, freshly baked pastries, and drinks made with so much love.</p>
+
+        <div class="footer-socials">
+
+          <a href="https://www.facebook.com/TYnapaybyAdz" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5h1.7V3.9c-.3 0-1.4-.1-2.6-.1-2.6 0-4.3 1.6-4.3 4.5V10H7v3h2.9v8h3.6z"/></svg>
+
+          </a>
+
+          <a href="https://www.tiktok.com/@tynapaybyadz?_r=1&_t=ZS-9AQkoAnz0du" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.6 7.1a6.4 6.4 0 0 1-3.9-1.3v8.1a6.1 6.1 0 1 1-5.3-6.1v3.4a2.8 2.8 0 1 0 2 2.7V2.5h3.3c.2 2.1 1.7 3.8 3.9 4.1v.5z"/></svg>
+
+          </a>
+
+          <a href="https://www.instagram.com/tynapay_by_adz?srtk=MTJvYXhvajVkaGVleQ%3D%3D" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+
+            <svg class="instagram-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+
+          </a>
+
+        </div>
+
+        <div class="footer-copyright">© 2026 Tynapay By Adz. All rights reserved.</div>
+
+      </div>
+
+    </div>
+
+    <section class="franchise-section" id="franchise">
+
+      <div class="franchise-wrap">
+
+        <div class="franchise-copy">
+
+          <span class="kicker">Grow with us</span>
+
+          <h2>Franchise Now</h2>
+
+          <p>Interested in becoming a franchise partner? Tynapay By Adz plans to develop a PHP-based franchise database system to collect applicant information and help the team organize, review, and track franchise inquiries.</p>
+
+          <ul class="feature-list">
+
+            <li>Franchise inquiry form</li>
+
+            <li>Applicant information records</li>
+
+            <li>Application status tracking</li>
+
+            <li>Admin view for managing submissions</li>
+
+          </ul>
+
+          <p><strong>Note:</strong> Your personal information will be collected and used only for its intended purpose, such as franchise inquiries and customer feedback. We respect your privacy and are committed to protecting your data in accordance with the Philippine Data Privacy Act of 2012 (RA 10173). Your information will not be shared with unauthorized parties..</p>
+
+        </div>
+
+        <div class="form-card qr-card">
+          <h3>Franchise Inquiry Form</h3>
+          <p>Complete our official franchise inquiry form using the button below or scan the QR code.</p>
+          <a class="qr-link" href="https://docs.google.com/forms/d/e/1FAIpQLSeqHPmTyIV4nufiJ5lCIOJT9xAJHQsFpW205nEiMtBRqAMcOg/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" aria-label="Open the Franchise Inquiry Google Form">
+            <img class="form-qr" src="data:image/png;base64,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" alt="QR code for the Franchise Inquiry Form">
+          </a>
+          <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSeqHPmTyIV4nufiJ5lCIOJT9xAJHQsFpW205nEiMtBRqAMcOg/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">Open Franchise Form →</a>
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+
+
+    <div class="section-footer" aria-label="Tynapay By Adz social media footer">
+
+      <div class="section-footer-inner">
+
+        <div class="footer-brand">TYNAPAY BY ADZ</div>
+
+        <p class="footer-bio">Family's favorite online bakeshop offering ultra-soft cheese rolls, freshly baked pastries, and drinks made with so much love.</p>
+
+        <div class="footer-socials">
+
+          <a href="https://www.facebook.com/TYnapaybyAdz" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5h1.7V3.9c-.3 0-1.4-.1-2.6-.1-2.6 0-4.3 1.6-4.3 4.5V10H7v3h2.9v8h3.6z"/></svg>
+
+          </a>
+
+          <a href="https://www.tiktok.com/@tynapaybyadz?_r=1&_t=ZS-9AQkoAnz0du" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.6 7.1a6.4 6.4 0 0 1-3.9-1.3v8.1a6.1 6.1 0 1 1-5.3-6.1v3.4a2.8 2.8 0 1 0 2 2.7V2.5h3.3c.2 2.1 1.7 3.8 3.9 4.1v.5z"/></svg>
+
+          </a>
+
+          <a href="https://www.instagram.com/tynapay_by_adz?srtk=MTJvYXhvajVkaGVleQ%3D%3D" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+
+            <svg class="instagram-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+
+          </a>
+
+        </div>
+
+        <div class="footer-copyright">© 2026 Tynapay By Adz. All rights reserved.</div>
+
+      </div>
+
+    </div>
+
+    <section class="section feedback-bg" id="feedback">
+
+      <div class="section-head">
+
+        <span class="kicker">We'd love to hear from you</span>
+
+        <h2>Feedback &amp; Suggestions</h2>
+
+        <p>Your feedback helps us make every bite and sip more delightful.</p>
+
+      </div>
+
+      <div class="feedback-layout">
+
+        <div class="feedback-intro">
+
+          <h3>Share your experience ♡</h3>
+
+          <p>Tell us what you enjoyed or how we can improve. You can leave feedback about products, service, delivery, or your overall experience.</p>
+
+          <p><strong>Need a direct response?</strong> Message us through our official social media links below.</p>
+
+        </div>
+
+        <div class="form-card qr-card">
+          <h3>Customer Feedback Form</h3>
+          <p>We value your feedback. Click below or scan the QR code to share your experience.</p>
+          <a class="qr-link" href="https://forms.gle/3MuXfBGv5Z6dHcpG9" target="_blank" rel="noopener noreferrer" aria-label="Open the Customer Feedback Google Form">
+            <img class="form-qr" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASgAAAEoCAIAAABkZftOAAAFXklEQVR4nO3dQY4bIRBA0TjK/a88OQELIiqfbr+3ttyesb9YlIDPz8/PL+D/+l1/APhGwoOA8CAgPAgIDwLCg4DwICA8CAgPAsKDgPAgIDwICA8CwoOA8CAgPAgIDwLCg4DwICA8CAgPAsKDgPAgIDwICA8CwoOA8CAgPAgIDwLCg4DwIPBn+gGfz2f6EUfs3hO4+rtue5+V1fuf+r6m33/a9L2RVjwICA8CwoOA8CAgPAgIDwLCg8D4HG9lek6yctuc6tT/oZofnvL038MuKx4EhAcB4UFAeBAQHgSEBwHhQSCb461Mz9l23Tbv2v0806+fdtvv4RQrHgSEBwHhQUB4EBAeBIQHAeFB4Lo53ltV++5Ovb7aZ/hWVjwICA8CwoOA8CAgPAgIDwLCg4A53j86tc9t2vR5m0+57+42VjwICA8CwoOA8CAgPAgIDwLCg8B1c7yn7ON6ylzrts+z6ym/h11WPAgIDwLCg4DwICA8CAgPAsKDQDbHe/p8aVd1f91T9td92+/BigcB4UFAeBAQHgSEBwHhQUB4EBif4711P9XK9H10p15fue3zVKx4EBAeBIQHAeFBQHgQEB4EhAeBz/Rc5Sn7wabvkTvltvneW7/faVY8CAgPAsKDgPAgIDwICA8CwoPA+Bxv+eBD86Xb5mm7bpsvTf9dt/3fqt+PFQ8CwoOA8CAgPAgIDwLCg4DwIJDtxzvl1LzoKfPDlWo+dur/PP193caKBwHhQUB4EBAeBIQHAeFBQHgQyPbjnVLNkXbddo7lbZ9n5a33B1rxICA8CAgPAsKDgPAgIDwICA8C183x7O/6N9NzrdvmZk//fq14EBAeBIQHAeFBQHgQEB4EhAeB6+7Hm1bNkVbeuj9wmvvxgG3Cg4DwICA8CAgPAsKDgPAg8Gf6Abftr6vmb9W8tPqc08899XtwriZ8EeFBQHgQEB4EhAcB4UFAeBAYn+NN253DTM+XpudCt805p+el03M/czz4IsKDgPAgIDwICA8CwoOA8CDwmHM1bzt/8q3PXan21731/kMrHgSEBwHhQUB4EBAeBIQHAeFBYHyON32O5e5zb5uPrdx2/9tt/89Tc0X348EXER4EhAcB4UFAeBAQHgSEB4HsXM3bzp+cnputVM/dddt+vFOcqwlfRHgQEB4EhAcB4UFAeBAQHgSuux/vKfOoau5023Or91m57ftaseJBQHgQEB4EhAcB4UFAeBAQHgSyczWn7z2bfp/b7m27bZ/htOnzPJ2rCS8kPAgIDwLCg4DwICA8CAgPAuNzvKe77X6/3fefniu+dX5ojgcvJDwICA8CwoOA8CAgPAgIDwLZfrzbTM+vbptHPeV8y6fsr9tlxYOA8CAgPAgIDwLCg4DwICA8CGT341Vzld250G378ZwjevZ9qnvzrHgQEB4EhAcB4UFAeBAQHgSEB4Fsjrfy1v1X1Zzt1OfZVe0/rOaKu6x4EBAeBIQHAeFBQHgQEB4EhAeB6+Z4TzE9Zzv13N33Wan2ra2cmhPajwdfRHgQEB4EhAcB4UFAeBAQHgTM8Q6bPu9xVzVvfOu9iKdY8SAgPAgIDwLCg4DwICA8CAgPAtfN8W47D/PU/rdTz11ZfZ5T991Vr1+ZvsdvmhUPAsKDgPAgIDwICA8CwoOA8CCQzfFum6usVOcunnruU+Z1t90fOM2KBwHhQUB4EBAeBIQHAeFBQHgQ+Nw234BvYMWDgPAgIDwICA8CwoOA8CAgPAgIDwLCg4DwICA8CAgPAsKDgPAgIDwICA8CwoOA8CAgPAgIDwLCg4DwICA8CAgPAsKDgPAgIDwICA8CwoOA8CAgPAj8BdxlTiww/W/JAAAAAElFTkSuQmCC" alt="QR code for the Customer Feedback Form">
+          </a>
+          <a class="btn btn-primary" href="https://forms.gle/3MuXfBGv5Z6dHcpG9" target="_blank" rel="noopener noreferrer">Give Feedback →</a>
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <div class="section-footer" aria-label="Tynapay By Adz social media footer">
+
+      <div class="section-footer-inner">
+
+        <div class="footer-brand">TYNAPAY BY ADZ</div>
+
+        <p class="footer-bio">Family's favorite online bakeshop offering ultra-soft cheese rolls, freshly baked pastries, and drinks made with so much love.</p>
+
+        <div class="footer-socials">
+
+          <a href="https://www.facebook.com/TYnapaybyAdz" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5h1.7V3.9c-.3 0-1.4-.1-2.6-.1-2.6 0-4.3 1.6-4.3 4.5V10H7v3h2.9v8h3.6z"/></svg>
+
+          </a>
+
+          <a href="https://www.tiktok.com/@tynapaybyadz?_r=1&_t=ZS-9AQkoAnz0du" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.6 7.1a6.4 6.4 0 0 1-3.9-1.3v8.1a6.1 6.1 0 1 1-5.3-6.1v3.4a2.8 2.8 0 1 0 2 2.7V2.5h3.3c.2 2.1 1.7 3.8 3.9 4.1v.5z"/></svg>
+
+          </a>
+
+          <a href="https://www.instagram.com/tynapay_by_adz?srtk=MTJvYXhvajVkaGVleQ%3D%3D" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+
+            <svg class="instagram-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+
+          </a>
+
+        </div>
+
+        <div class="footer-copyright">© 2026 Tynapay By Adz. All rights reserved.</div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+
+
+
+
+  <script>
+
+    const menuToggle = document.getElementById('menuToggle');
+
+    const mainNav = document.getElementById('mainNav');
+
+    menuToggle.addEventListener('click', () => {
+
+      const isOpen = mainNav.classList.toggle('open');
+
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+
+    });
+
+    mainNav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+
+      mainNav.classList.remove('open');
+
+      menuToggle.setAttribute('aria-expanded', 'false');
+
+    }));
+
+
+
+    const tabs = document.querySelectorAll('.tab');
+
+    const panels = document.querySelectorAll('.menu-panel');
+
+    tabs.forEach(tab => tab.addEventListener('click', () => {
+
+      tabs.forEach(item => {
+
+        item.classList.remove('active');
+
+        item.setAttribute('aria-selected', 'false');
+
+      });
+
+      panels.forEach(panel => panel.classList.remove('active'));
+
+      tab.classList.add('active');
+
+      tab.setAttribute('aria-selected', 'true');
+
+      document.getElementById('panel-' + tab.dataset.panel).classList.add('active');
+
+    }));
+
+
+
+
+  </script>
+
+</body>
+
+</html>
